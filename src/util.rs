@@ -4,6 +4,9 @@ pub mod gtinny {
     pub fn is_valid(gtin: &str) -> bool {
         let re = Regex::new(r"^\d{8}$|^\d{12,14}$").unwrap();
         let is_match = re.is_match(gtin);
+        if !is_match {
+            return false;
+        }
         let last_char = gtin.chars().last().unwrap();
         let reversed = gtin[0..gtin.len() - 1].chars().rev();
 
@@ -14,7 +17,6 @@ pub mod gtinny {
         }
         let sum = list.into_iter().reduce(|a, b| a + b).unwrap() % 10;
 
-        return is_match
-            && last_char.to_string() == (10 - (if sum == 0 { 10 } else { sum })).to_string();
+        return last_char.to_string() == (10 - (if sum == 0 { 10 } else { sum })).to_string();
     }
 }

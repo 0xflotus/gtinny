@@ -1,12 +1,12 @@
 mod util;
 use util::gtinny;
 
-use clap::{Arg, Command, ArgAction};
+use clap::{Arg, ArgAction, Command};
 use std::process::exit;
 
 fn main() {
     let matches = Command::new("gtinny")
-        .version("0.1.0")
+        .version("0.1.1")
         .about("A GTIN Validator")
         .arg(Arg::new("gtin").help("Validates the GTIN"))
         .arg(
