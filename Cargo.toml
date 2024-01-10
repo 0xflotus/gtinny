@@ -1,0 +1,23 @@
+[package]
+name = "gtinny"
+version = "0.1.0"
+description = "A GTIN Validator"
+license = "MIT"
+authors = ["0xflotus"]
+edition = "2021"
+
+homepage = "https://github.com/0xflotus/gtinny"
+repository = "https://github.com/0xflotus/gtinny"
+keywords = ["cli", "gtin"]
+categories = ["command-line-utilities"]
+readme = "README.md"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+clap = "4.4.14"
+regex = "1.10.2"
+
+[[bin]]
+
+name = "gtinny"
