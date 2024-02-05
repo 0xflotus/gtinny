@@ -20,3 +20,20 @@ pub mod gtinny {
         return last_char.to_string() == (10 - (if sum == 0 { 10 } else { sum })).to_string();
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use crate::util::gtinny::is_valid;
+
+    #[test]
+    fn valid_gtin() {
+        let result = is_valid("97350053850012");
+        assert_eq!(result, true);
+    }
+
+    #[test]
+    fn invalid_gtin() {
+        let result = is_valid("12398748906");
+        assert_eq!(result, false);
+    }
+}
