@@ -18,6 +18,7 @@ Arguments:
 
 Options:
   -v, --verbose  Print if it is a valid GTIN
+  -q, --quiet    Suppress all logging. Overrides verbose behaviour.
   -h, --help     Print help
   -V, --version  Print version
 ```
